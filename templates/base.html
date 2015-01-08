@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<script type="text/javascript" src="{{STATIC_URL}}js/base.js"></script> 
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/base.css" />
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+	
+    <center><h2>Send RSS to Your Kindle</h2></center>
+
+
+    {% block content %}{% endblock %}
+    
+    {% block footer %}
+    <center><p>Thanks for visiting my site.</p></center>
+    {% endblock %}
+</body>
+</html>

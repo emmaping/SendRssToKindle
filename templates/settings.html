@@ -1,0 +1,21 @@
+{% extends "base_left.html" %}
+<div class="wrap">
+
+  {% block content_right %}
+    <h3>Settings</h3>
+       
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Save">
+    </form> 
+   {% endblock %}
+
+</div>

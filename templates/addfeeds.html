@@ -1,0 +1,28 @@
+{% extends "base_left.html" %}
+  {% block content_right %}
+      <h3>Add Feeds</h3>
+    {% if messages %}
+	<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	
+	</ul>
+
+	{% endif %}
+      <form action="" method="post">{% csrf_token %}
+        
+        <div class="field">
+        <label for="title"><i class="entypo-briefcase"></i>   </label>
+        <input type="text" name = "title" id="title" />
+        </div>
+        
+         <div class="field">
+         <label for="url"><i class="entypo-link"></i> </label>
+        <input type="text" name = "url" id="url" />
+        </div>
+
+          <input type="submit" id="submit" />
+        
+      </form>
+   {% endblock %}

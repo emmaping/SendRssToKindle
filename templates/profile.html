@@ -1,0 +1,23 @@
+{% extends "base_left.html" %}
+<div class="wrap">
+
+  {% block content_right %}
+    <h3>Subscribed RSS</h3>
+       <nav role='navigation'>
+        <ul class="topmenu">
+       <form action="" method="post">{% csrf_token %}
+		{% for subscribedrss in subscribedrsses %}
+          <li>
+          <div>
+          <input type = "checkbox" name="checkedrss" value={{ subscribedrss.url }} ><a href= {{ subscribedrss.url }}><i class="entypo-rss"></i>{{ subscribedrss.title }}</a>
+          </div>
+         </li>
+            {% endfor %}
+            
+    		<input type="submit" name="delete" value="Delete" />
+  		</form> 
+        </ul>
+      </nav>  
+   {% endblock %}
+
+</div>

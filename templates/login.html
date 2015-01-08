@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Send Rss to Kindle{% endblock %}
+
+
+{% block content %}
+
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  <center>
+    <section_center id="form">
+      <h3>Login</h3>
+      <form action="" method="post">{% csrf_token %}
+    <label for="username">User name:</label>
+    <input type="text" name="username" value="" id="username">
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="" id="password">
+
+    <input type="submit" value="login" />
+    <input type="hidden" name="next" value="{{ next|escape }}" />
+  </form> 
+    </section_center>
+    
+    <p id="nav">
+	<a href="/register/" title="signup">sign up</a>
+	</p>
+</center>
+{% endblock %}
+

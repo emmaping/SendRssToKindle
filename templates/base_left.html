@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<div class="wrap">
+
+  <script type="text/javascript" src="{{STATIC_URL}}js/base.js"></script> 
+  <link href='{{STATIC_URL}}css/base.css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <header></header>
+  {% block content %}
+  <main>
+    
+    <section_left id="vert-nav">
+      <h3>Profile</h3>
+       <nav role='navigation'>
+        <ul class="topmenu">
+          <li><a href="/profile/"><i class="entypo-home"></i> Home</a></li>
+          <li><a href="/feeds/"><i class="entypo-rss"></i> Feeds</a> </li>
+          <li><a href="/settings/"><i class="entypo-book-open"></i> Settings</a></li>
+          <li><a href="/logout"><i class="entypo-logout"></i> Logout</a></li>
+        </ul>
+      </nav>  
+    </section_left>
+    <section_right id="vert-nav">
+        {% block content_right %}
+        {% endblock %}
+    </section_right>
+  </main>
+  {% endblock %}
+</div>
